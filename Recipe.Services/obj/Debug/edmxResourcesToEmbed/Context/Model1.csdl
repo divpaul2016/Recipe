@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FoodWorldModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CookingStyle">
+    <Key>
+      <PropertyRef Name="CookingStyleId" />
+    </Key>
+    <Property Name="CookingStyleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CookingStyleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="RecipeCookingStyles" Relationship="Self.FK__RecipeCoo__Cooki__3F466844" FromRole="CookingStyles" ToRole="RecipeCookingStyle" />
+  </EntityType>
+  <EntityType Name="Cuisine">
+    <Key>
+      <PropertyRef Name="CuisineId" />
+    </Key>
+    <Property Name="CuisineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CuisineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="RecipeCuisines" Relationship="Self.FK__RecipeCui__Cuisi__4316F928" FromRole="Cuisines" ToRole="RecipeCuisine" />
+  </EntityType>
+  <EntityType Name="DishType">
+    <Key>
+      <PropertyRef Name="DishTypeID" />
+    </Key>
+    <Property Name="DishTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DishTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="RecipeDishTypes" Relationship="Self.FK__RecipeDis__DishT__3B75D760" FromRole="DishTypes" ToRole="RecipeDishType" />
+  </EntityType>
+  <EntityType Name="FoodRecipe">
+    <Key>
+      <PropertyRef Name="RecipeId" />
+    </Key>
+    <Property Name="RecipeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FoodName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrepTime" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ReadyIn" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CookingTime" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MainIngredientId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RecipeCookingStyles" Relationship="Self.FK__RecipeCoo__Recip__3E52440B" FromRole="FoodRecipes" ToRole="RecipeCookingStyle" />
+    <NavigationProperty Name="RecipeCuisines" Relationship="Self.FK__RecipeCui__Recip__4222D4EF" FromRole="FoodRecipes" ToRole="RecipeCuisine" />
+    <NavigationProperty Name="RecipeDirections" Relationship="Self.FK__RecipeDir__Recip__33D4B598" FromRole="FoodRecipes" ToRole="RecipeDirection" />
+    <NavigationProperty Name="RecipeDishTypes" Relationship="Self.FK__RecipeDis__Recip__3A81B327" FromRole="FoodRecipes" ToRole="RecipeDishType" />
+    <NavigationProperty Name="RecipeIngredients" Relationship="Self.FK__RecipeIng__Recip__300424B4" FromRole="FoodRecipes" ToRole="RecipeIngredient" />
+    <NavigationProperty Name="RecipeMealTypes" Relationship="Self.FK__RecipeMea__Recip__36B12243" FromRole="FoodRecipes" ToRole="RecipeMealType" />
+  </EntityType>
+  <EntityType Name="Ingredient">
+    <Key>
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="IngredientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IngredientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="RecipeIngredients" Relationship="Self.FK__RecipeIng__Ingre__30F848ED" FromRole="Ingredients" ToRole="RecipeIngredient" />
+  </EntityType>
+  <EntityType Name="MealType">
+    <Key>
+      <PropertyRef Name="MealTypeId" />
+    </Key>
+    <Property Name="MealTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MealTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="RecipeMealTypes" Relationship="Self.FK__RecipeMea__MealT__37A5467C" FromRole="MealTypes" ToRole="RecipeMealType" />
+  </EntityType>
+  <EntityType Name="RecipeCookingStyle">
+    <Key>
+      <PropertyRef Name="RecipeCookingStyleId" />
+    </Key>
+    <Property Name="RecipeCookingStyleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecipeId" Type="Int32" Nullable="false" />
+    <Property Name="CookingStyleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CookingStyle" Relationship="Self.FK__RecipeCoo__Cooki__3F466844" FromRole="RecipeCookingStyle" ToRole="CookingStyles" />
+    <NavigationProperty Name="FoodRecipe" Relationship="Self.FK__RecipeCoo__Recip__3E52440B" FromRole="RecipeCookingStyle" ToRole="FoodRecipes" />
+  </EntityType>
+  <EntityType Name="RecipeCuisine">
+    <Key>
+      <PropertyRef Name="RecipeCuisineId" />
+    </Key>
+    <Property Name="RecipeCuisineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecipeId" Type="Int32" Nullable="false" />
+    <Property Name="CuisineId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cuisine" Relationship="Self.FK__RecipeCui__Cuisi__4316F928" FromRole="RecipeCuisine" ToRole="Cuisines" />
+    <NavigationProperty Name="FoodRecipe" Relationship="Self.FK__RecipeCui__Recip__4222D4EF" FromRole="RecipeCuisine" ToRole="FoodRecipes" />
+  </EntityType>
+  <EntityType Name="RecipeDirection">
+    <Key>
+      <PropertyRef Name="RecipeDirectionId" />
+    </Key>
+    <Property Name="RecipeDirectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecipeId" Type="Int32" Nullable="false" />
+    <Property Name="StepNo" Type="Int32" Nullable="false" />
+    <Property Name="Instructions" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="FoodRecipe" Relationship="Self.FK__RecipeDir__Recip__33D4B598" FromRole="RecipeDirection" ToRole="FoodRecipes" />
+  </EntityType>
+  <EntityType Name="RecipeDishType">
+    <Key>
+      <PropertyRef Name="RecipeDishTypeId" />
+    </Key>
+    <Property Name="RecipeDishTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecipeId" Type="Int32" Nullable="false" />
+    <Property Name="DishTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DishType" Relationship="Self.FK__RecipeDis__DishT__3B75D760" FromRole="RecipeDishType" ToRole="DishTypes" />
+    <NavigationProperty Name="FoodRecipe" Relationship="Self.FK__RecipeDis__Recip__3A81B327" FromRole="RecipeDishType" ToRole="FoodRecipes" />
+  </EntityType>
+  <EntityType Name="RecipeIngredient">
+    <Key>
+      <PropertyRef Name="RecipeIngredientId" />
+    </Key>
+    <Property Name="RecipeIngredientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecipeId" Type="Int32" Nullable="false" />
+    <Property Name="IngredientId" Type="Int32" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="FoodRecipe" Relationship="Self.FK__RecipeIng__Recip__300424B4" FromRole="RecipeIngredient" ToRole="FoodRecipes" />
+    <NavigationProperty Name="Ingredient" Relationship="Self.FK__RecipeIng__Ingre__30F848ED" FromRole="RecipeIngredient" ToRole="Ingredients" />
+  </EntityType>
+  <EntityType Name="RecipeMealType">
+    <Key>
+      <PropertyRef Name="RecipeMealTypeId" />
+    </Key>
+    <Property Name="RecipeMealTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecipeId" Type="Int32" Nullable="false" />
+    <Property Name="MealTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FoodRecipe" Relationship="Self.FK__RecipeMea__Recip__36B12243" FromRole="RecipeMealType" ToRole="FoodRecipes" />
+    <NavigationProperty Name="MealType" Relationship="Self.FK__RecipeMea__MealT__37A5467C" FromRole="RecipeMealType" ToRole="MealTypes" />
+  </EntityType>
+  <Association Name="FK__RecipeCoo__Cooki__3F466844">
+    <End Role="CookingStyles" Type="Self.CookingStyle" Multiplicity="1" />
+    <End Role="RecipeCookingStyle" Type="Self.RecipeCookingStyle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CookingStyles">
+        <PropertyRef Name="CookingStyleId" />
+      </Principal>
+      <Dependent Role="RecipeCookingStyle">
+        <PropertyRef Name="CookingStyleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeCui__Cuisi__4316F928">
+    <End Role="Cuisines" Type="Self.Cuisine" Multiplicity="1" />
+    <End Role="RecipeCuisine" Type="Self.RecipeCuisine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuisines">
+        <PropertyRef Name="CuisineId" />
+      </Principal>
+      <Dependent Role="RecipeCuisine">
+        <PropertyRef Name="CuisineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeDis__DishT__3B75D760">
+    <End Role="DishTypes" Type="Self.DishType" Multiplicity="1" />
+    <End Role="RecipeDishType" Type="Self.RecipeDishType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DishTypes">
+        <PropertyRef Name="DishTypeID" />
+      </Principal>
+      <Dependent Role="RecipeDishType">
+        <PropertyRef Name="DishTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeCoo__Recip__3E52440B">
+    <End Role="FoodRecipes" Type="Self.FoodRecipe" Multiplicity="1" />
+    <End Role="RecipeCookingStyle" Type="Self.RecipeCookingStyle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodRecipes">
+        <PropertyRef Name="RecipeId" />
+      </Principal>
+      <Dependent Role="RecipeCookingStyle">
+        <PropertyRef Name="RecipeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeCui__Recip__4222D4EF">
+    <End Role="FoodRecipes" Type="Self.FoodRecipe" Multiplicity="1" />
+    <End Role="RecipeCuisine" Type="Self.RecipeCuisine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodRecipes">
+        <PropertyRef Name="RecipeId" />
+      </Principal>
+      <Dependent Role="RecipeCuisine">
+        <PropertyRef Name="RecipeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeDir__Recip__33D4B598">
+    <End Role="FoodRecipes" Type="Self.FoodRecipe" Multiplicity="1" />
+    <End Role="RecipeDirection" Type="Self.RecipeDirection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodRecipes">
+        <PropertyRef Name="RecipeId" />
+      </Principal>
+      <Dependent Role="RecipeDirection">
+        <PropertyRef Name="RecipeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeDis__Recip__3A81B327">
+    <End Role="FoodRecipes" Type="Self.FoodRecipe" Multiplicity="1" />
+    <End Role="RecipeDishType" Type="Self.RecipeDishType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodRecipes">
+        <PropertyRef Name="RecipeId" />
+      </Principal>
+      <Dependent Role="RecipeDishType">
+        <PropertyRef Name="RecipeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeIng__Recip__300424B4">
+    <End Role="FoodRecipes" Type="Self.FoodRecipe" Multiplicity="1" />
+    <End Role="RecipeIngredient" Type="Self.RecipeIngredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodRecipes">
+        <PropertyRef Name="RecipeId" />
+      </Principal>
+      <Dependent Role="RecipeIngredient">
+        <PropertyRef Name="RecipeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeMea__Recip__36B12243">
+    <End Role="FoodRecipes" Type="Self.FoodRecipe" Multiplicity="1" />
+    <End Role="RecipeMealType" Type="Self.RecipeMealType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodRecipes">
+        <PropertyRef Name="RecipeId" />
+      </Principal>
+      <Dependent Role="RecipeMealType">
+        <PropertyRef Name="RecipeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeIng__Ingre__30F848ED">
+    <End Role="Ingredients" Type="Self.Ingredient" Multiplicity="1" />
+    <End Role="RecipeIngredient" Type="Self.RecipeIngredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="IngredientID" />
+      </Principal>
+      <Dependent Role="RecipeIngredient">
+        <PropertyRef Name="IngredientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RecipeMea__MealT__37A5467C">
+    <End Role="MealTypes" Type="Self.MealType" Multiplicity="1" />
+    <End Role="RecipeMealType" Type="Self.RecipeMealType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MealTypes">
+        <PropertyRef Name="MealTypeId" />
+      </Principal>
+      <Dependent Role="RecipeMealType">
+        <PropertyRef Name="MealTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FoodWorldEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CookingStyles" EntityType="Self.CookingStyle" />
+    <EntitySet Name="Cuisines" EntityType="Self.Cuisine" />
+    <EntitySet Name="DishTypes" EntityType="Self.DishType" />
+    <EntitySet Name="FoodRecipes" EntityType="Self.FoodRecipe" />
+    <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+    <EntitySet Name="MealTypes" EntityType="Self.MealType" />
+    <EntitySet Name="RecipeCookingStyles" EntityType="Self.RecipeCookingStyle" />
+    <EntitySet Name="RecipeCuisines" EntityType="Self.RecipeCuisine" />
+    <EntitySet Name="RecipeDirections" EntityType="Self.RecipeDirection" />
+    <EntitySet Name="RecipeDishTypes" EntityType="Self.RecipeDishType" />
+    <EntitySet Name="RecipeIngredients" EntityType="Self.RecipeIngredient" />
+    <EntitySet Name="RecipeMealTypes" EntityType="Self.RecipeMealType" />
+    <AssociationSet Name="FK__RecipeCoo__Cooki__3F466844" Association="Self.FK__RecipeCoo__Cooki__3F466844">
+      <End Role="CookingStyles" EntitySet="CookingStyles" />
+      <End Role="RecipeCookingStyle" EntitySet="RecipeCookingStyles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeCui__Cuisi__4316F928" Association="Self.FK__RecipeCui__Cuisi__4316F928">
+      <End Role="Cuisines" EntitySet="Cuisines" />
+      <End Role="RecipeCuisine" EntitySet="RecipeCuisines" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeDis__DishT__3B75D760" Association="Self.FK__RecipeDis__DishT__3B75D760">
+      <End Role="DishTypes" EntitySet="DishTypes" />
+      <End Role="RecipeDishType" EntitySet="RecipeDishTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeCoo__Recip__3E52440B" Association="Self.FK__RecipeCoo__Recip__3E52440B">
+      <End Role="FoodRecipes" EntitySet="FoodRecipes" />
+      <End Role="RecipeCookingStyle" EntitySet="RecipeCookingStyles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeCui__Recip__4222D4EF" Association="Self.FK__RecipeCui__Recip__4222D4EF">
+      <End Role="FoodRecipes" EntitySet="FoodRecipes" />
+      <End Role="RecipeCuisine" EntitySet="RecipeCuisines" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeDir__Recip__33D4B598" Association="Self.FK__RecipeDir__Recip__33D4B598">
+      <End Role="FoodRecipes" EntitySet="FoodRecipes" />
+      <End Role="RecipeDirection" EntitySet="RecipeDirections" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeDis__Recip__3A81B327" Association="Self.FK__RecipeDis__Recip__3A81B327">
+      <End Role="FoodRecipes" EntitySet="FoodRecipes" />
+      <End Role="RecipeDishType" EntitySet="RecipeDishTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeIng__Recip__300424B4" Association="Self.FK__RecipeIng__Recip__300424B4">
+      <End Role="FoodRecipes" EntitySet="FoodRecipes" />
+      <End Role="RecipeIngredient" EntitySet="RecipeIngredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeMea__Recip__36B12243" Association="Self.FK__RecipeMea__Recip__36B12243">
+      <End Role="FoodRecipes" EntitySet="FoodRecipes" />
+      <End Role="RecipeMealType" EntitySet="RecipeMealTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeIng__Ingre__30F848ED" Association="Self.FK__RecipeIng__Ingre__30F848ED">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="RecipeIngredient" EntitySet="RecipeIngredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RecipeMea__MealT__37A5467C" Association="Self.FK__RecipeMea__MealT__37A5467C">
+      <End Role="MealTypes" EntitySet="MealTypes" />
+      <End Role="RecipeMealType" EntitySet="RecipeMealTypes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

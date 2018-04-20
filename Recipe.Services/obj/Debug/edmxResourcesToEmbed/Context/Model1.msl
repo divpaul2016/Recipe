@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FoodWorldModelStoreContainer" CdmEntityContainer="FoodWorldEntities5">
+    <EntitySetMapping Name="CookingStyles">
+      <EntityTypeMapping TypeName="FoodWorldModel.CookingStyle">
+        <MappingFragment StoreEntitySet="CookingStyles">
+          <ScalarProperty Name="CookingStyleName" ColumnName="CookingStyleName" />
+          <ScalarProperty Name="CookingStyleId" ColumnName="CookingStyleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuisines">
+      <EntityTypeMapping TypeName="FoodWorldModel.Cuisine">
+        <MappingFragment StoreEntitySet="Cuisines">
+          <ScalarProperty Name="CuisineName" ColumnName="CuisineName" />
+          <ScalarProperty Name="CuisineId" ColumnName="CuisineId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DishTypes">
+      <EntityTypeMapping TypeName="FoodWorldModel.DishType">
+        <MappingFragment StoreEntitySet="DishTypes">
+          <ScalarProperty Name="DishTypeName" ColumnName="DishTypeName" />
+          <ScalarProperty Name="DishTypeID" ColumnName="DishTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodRecipes">
+      <EntityTypeMapping TypeName="FoodWorldModel.FoodRecipe">
+        <MappingFragment StoreEntitySet="FoodRecipes">
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+          <ScalarProperty Name="PrepTime" ColumnName="PrepTime" />
+          <ScalarProperty Name="ReadyIn" ColumnName="ReadyIn" />
+          <ScalarProperty Name="CookingTime" ColumnName="CookingTime" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="MainIngredientId" ColumnName="MainIngredientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredients">
+      <EntityTypeMapping TypeName="FoodWorldModel.Ingredient">
+        <MappingFragment StoreEntitySet="Ingredients">
+          <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
+          <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MealTypes">
+      <EntityTypeMapping TypeName="FoodWorldModel.MealType">
+        <MappingFragment StoreEntitySet="MealTypes">
+          <ScalarProperty Name="MealTypeName" ColumnName="MealTypeName" />
+          <ScalarProperty Name="MealTypeId" ColumnName="MealTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeCookingStyles">
+      <EntityTypeMapping TypeName="FoodWorldModel.RecipeCookingStyle">
+        <MappingFragment StoreEntitySet="RecipeCookingStyle">
+          <ScalarProperty Name="RecipeCookingStyleId" ColumnName="RecipeCookingStyleId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="CookingStyleId" ColumnName="CookingStyleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeCuisines">
+      <EntityTypeMapping TypeName="FoodWorldModel.RecipeCuisine">
+        <MappingFragment StoreEntitySet="RecipeCuisine">
+          <ScalarProperty Name="RecipeCuisineId" ColumnName="RecipeCuisineId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="CuisineId" ColumnName="CuisineId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeDirections">
+      <EntityTypeMapping TypeName="FoodWorldModel.RecipeDirection">
+        <MappingFragment StoreEntitySet="RecipeDirection">
+          <ScalarProperty Name="RecipeDirectionId" ColumnName="RecipeDirectionId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="StepNo" ColumnName="StepNo" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeDishTypes">
+      <EntityTypeMapping TypeName="FoodWorldModel.RecipeDishType">
+        <MappingFragment StoreEntitySet="RecipeDishType">
+          <ScalarProperty Name="RecipeDishTypeId" ColumnName="RecipeDishTypeId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="DishTypeId" ColumnName="DishTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeIngredients">
+      <EntityTypeMapping TypeName="FoodWorldModel.RecipeIngredient">
+        <MappingFragment StoreEntitySet="RecipeIngredient">
+          <ScalarProperty Name="RecipeIngredientId" ColumnName="RecipeIngredientId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="IngredientId" ColumnName="IngredientId" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeMealTypes">
+      <EntityTypeMapping TypeName="FoodWorldModel.RecipeMealType">
+        <MappingFragment StoreEntitySet="RecipeMealType">
+          <ScalarProperty Name="RecipeMealTypeId" ColumnName="RecipeMealTypeId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="MealTypeId" ColumnName="MealTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

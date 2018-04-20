@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FoodWorldStoreContainer" CdmEntityContainer="FoodWorldEntities1">
+    <EntitySetMapping Name="CookingStyles">
+      <EntityTypeMapping TypeName="FoodWorld.CookingStyle">
+        <MappingFragment StoreEntitySet="CookingStyles">
+          <ScalarProperty Name="CookingStyle_Name_" ColumnName="CookingStyle Name " />
+          <ScalarProperty Name="CookingStyleId" ColumnName="CookingStyleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuisines">
+      <EntityTypeMapping TypeName="FoodWorld.Cuisine">
+        <MappingFragment StoreEntitySet="Cuisines">
+          <ScalarProperty Name="Cuisine_Name_" ColumnName="Cuisine Name " />
+          <ScalarProperty Name="CuisineId" ColumnName="CuisineId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DishTypes">
+      <EntityTypeMapping TypeName="FoodWorld.DishType">
+        <MappingFragment StoreEntitySet="DishTypes">
+          <ScalarProperty Name="DishType_Name_" ColumnName="DishType Name " />
+          <ScalarProperty Name="DishTypeID" ColumnName="DishTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodRecipes">
+      <EntityTypeMapping TypeName="FoodWorld.FoodRecipe">
+        <MappingFragment StoreEntitySet="FoodRecipes">
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+          <ScalarProperty Name="PrepTime" ColumnName="PrepTime" />
+          <ScalarProperty Name="ReadyIn" ColumnName="ReadyIn" />
+          <ScalarProperty Name="CookingTime" ColumnName="CookingTime" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="MainIngredientId" ColumnName="MainIngredientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredients">
+      <EntityTypeMapping TypeName="FoodWorld.Ingredient">
+        <MappingFragment StoreEntitySet="Ingredients">
+          <ScalarProperty Name="Ingredient_Name_" ColumnName="Ingredient Name " />
+          <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MealTypes">
+      <EntityTypeMapping TypeName="FoodWorld.MealType">
+        <MappingFragment StoreEntitySet="MealTypes">
+          <ScalarProperty Name="MealType_Name_" ColumnName="MealType Name " />
+          <ScalarProperty Name="MealTypeId" ColumnName="MealTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeCookingStyles">
+      <EntityTypeMapping TypeName="FoodWorld.RecipeCookingStyle">
+        <MappingFragment StoreEntitySet="RecipeCookingStyle">
+          <ScalarProperty Name="RecipeCookingStyleId" ColumnName="RecipeCookingStyleId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="CookingStyleId" ColumnName="CookingStyleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeCuisines">
+      <EntityTypeMapping TypeName="FoodWorld.RecipeCuisine">
+        <MappingFragment StoreEntitySet="RecipeCuisine">
+          <ScalarProperty Name="RecipeCuisineId" ColumnName="RecipeCuisineId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="CuisineId" ColumnName="CuisineId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeDirections">
+      <EntityTypeMapping TypeName="FoodWorld.RecipeDirection">
+        <MappingFragment StoreEntitySet="RecipeDirection">
+          <ScalarProperty Name="RecipeDirectionId" ColumnName="RecipeDirectionId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="StepNo" ColumnName="StepNo" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeDishTypes">
+      <EntityTypeMapping TypeName="FoodWorld.RecipeDishType">
+        <MappingFragment StoreEntitySet="RecipeDishType">
+          <ScalarProperty Name="RecipeDishTypeId" ColumnName="RecipeDishTypeId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="DishTypeId" ColumnName="DishTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeIngredients">
+      <EntityTypeMapping TypeName="FoodWorld.RecipeIngredient">
+        <MappingFragment StoreEntitySet="RecipeIngredient">
+          <ScalarProperty Name="RecipeIngredientId" ColumnName="RecipeIngredientId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="IngredientId" ColumnName="IngredientId" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeMealTypes">
+      <EntityTypeMapping TypeName="FoodWorld.RecipeMealType">
+        <MappingFragment StoreEntitySet="RecipeMealType">
+          <ScalarProperty Name="RecipeMealTypeId" ColumnName="RecipeMealTypeId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="MealTypeId" ColumnName="MealTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

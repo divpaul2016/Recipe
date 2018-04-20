@@ -1,0 +1,14 @@
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\bin\Debug\Recipe.Services.dll.config
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\bin\Debug\Recipe.Services.dll
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\bin\Debug\Recipe.Services.pdb
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\bin\Debug\EntityFramework.dll
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\bin\Debug\EntityFramework.xml
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\obj\Debug\Recipe.Services.csproj.CoreCompileInputs.cache
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\obj\Debug\Recipe.Services.csproj.CopyComplete
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\obj\Debug\Recipe.Services.dll
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\obj\Debug\Recipe.Services.pdb
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\obj\Debug\Recipe.Services.Migrations.Initial.resources
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\obj\Debug\Recipe.Services.csproj.GenerateResource.cache
+C:\Users\divya.paul\source\Goal\Recipe\Recipe.Services\obj\Debug\Recipe.Services.csprojResolveAssemblyReference.cache
