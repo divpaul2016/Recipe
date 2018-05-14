@@ -3,6 +3,7 @@ using System.Linq;
 using Recipe.Services.Context;
 using Recipe.Services.Models;
 using Recipe.Services.Models.ApiModels;
+using Ingredient = Recipe.Services.Models.Ingredient;
 
 namespace Recipe.Services
 {

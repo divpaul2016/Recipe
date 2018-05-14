@@ -1,9 +1,7 @@
-﻿using Recipe.Services.Models;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Recipe.Services
+namespace Recipe.Services.Models
 {
     public class Ingredient
     {
